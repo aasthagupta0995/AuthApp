@@ -15,7 +15,7 @@ type ConnectionObj = {
 
 const connection: ConnectionObj = {}
 
-async function dbConnect(): Promise<void> {
+export async function dbConnect(): Promise<void> {
 
     // if already created connection 
 
@@ -30,7 +30,7 @@ async function dbConnect(): Promise<void> {
         console.log(db.connection, " connection db")
 
         connection.isConnected = connections[0].readyState
-        console.log('db si connnected successfully')
+        console.log('db is connnected successfully')
 
     }
     catch (error) {
