@@ -4,6 +4,8 @@
 
 // IIFE --> Imedietaly Invoked Function Expressions (IIFE)
 
+// It will execute after writing only
+
 // WHY IIFE USED ? ----   global scope ke poluttion se problem us poluttion ko remove krne ke liye IIFE used
 
 
@@ -13,7 +15,7 @@ function Example_IIFE() {
 
 Example_IIFE();
 
-(function testing() {
+(function testing() {   // called named IIFE
  console.log(`DB CONNECTED new  `)
 })();
 
