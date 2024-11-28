@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOC OBJECT MODEL PART- 2 -- Create Element in DOM</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <p> Hi </p>
+
+
+
+
+</body>
+
+<script>
+    // create div in script  which will create in memeory then it will attcah with html 
+    //------------------------------------------------
+
+    const div = document.createElement('div')
+    console.log(div) // returns div element tag   
+
+    div.className = "main"
+    div.id = "myId"      //  div.id =Math.round(Math.random()*10+1)  -- for fun random id 
+    div.setAttribute("title", "generated Title")  // will add attribute you want
+    div.style.backgroundColor = "green"
+    div.style.padding = "10px"
+
+    // adding the value in  div 2 method  inner HTML , createTextNode and then append
+    div.innerHTML = "chai or code using Inner HTML"   //-----inner HTML me, phele lekr aayga part phir overwrite krega  for that use teh createtextNode
+    // OR
+    // const text = document.createTextNode("chai or code using text Node")
+    // div.appendChild(text)
+
+
+    // attach HTML which will take the body from document & append the child with the tag we craeted
+
+    document.body.appendChild(div)
+    //------------------------------------------------------------------------
+
+    // simple example in short 
+
+    const h1 = document.createElement('h1')
+
+    h1.innerHTML = "Hey , This is heading"
+    h1.style.backgroundColor = "red"
+    h1.style.padding = "10px"
+    h1.style.fontSize = "25px"
+    h1.setAttribute("text", "MyText")
+    h1.className = "my"
+    h1.id = "myh1id"
+    console.log(h1)
+
+    document.body.appendChild(h1) // link with html
+
+
+</script>
+
+</html>
