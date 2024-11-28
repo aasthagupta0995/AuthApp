@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document Object Model</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+        <div class="day">Friday</div>
+    </div>
+</body>
+<script>
+    //--------------------------------------------------------------------
+    //DOCX
+    // DOM - WINDOW -> document -> RETURNS HTML CODE PARTS -> NODE LIST - childern / HTML COLLECTION -> as child looks like ARRAY But not ARRAY
+
+    // console.log(window)
+    // console.log(window.document)
+    // console.log(document)
+    // return  html -> head -> title   // as childerns 
+    // html=> body -> div , p , h1      //nodelist or childern
+
+    //-----------------------------------------------------------------
+
+    // selector  to select any item , element , id , class etc
+
+    const element = document.querySelector('.parent')   // will select the specific class for parent 
+    // console.log(element)
+    // console.log(element.children) // returns HTML Collections like ARRAY  but not array only for and for each is there 
+    // console.log(element.children[1].innerHTML) // Acess the pecific child with index return teh inside html value which was presented there
+    
+
+    for (let i = 0; i < element.children.length; i++) { 
+      console.log( element.children[i].innerHTML);
+    }
+   
+    // styling
+    element.children[1].style.color="orange"
+    element.children[3].style.color="orange"
+
+    console.log(element.firstElementChild) //extract the 1st div or element parent to child moving
+    console.log(element.lastElementChild)  // etract the last child
+
+   const day1= document.querySelector('.day')
+   console.log(day1) 
+   //  if we move to parent from child 
+   console.log(day1.parentElement)  // it will tell full parent of this 
+
+   console.log(day1.nextElementSibling) // will return next childer as siblings
+
+   console.log("Nodes:" ,element.childNodes) // returns Node list - as tree structure for all the childs 
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
