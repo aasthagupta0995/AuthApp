@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - PART -3 EDIT & REMOVE IN DOM</title>
+</head>
+
+<body style="background-color: black; color: white;">
+
+    <ul class="lang">
+        <li>Javascript</li>
+        <li> C++</li>
+        <li>C</li>
+    </ul>
+
+</body>
+<script>
+
+    //create of the element in DOM
+
+    const para = document.createElement('p')
+    para.innerHTML = "lorem abbsid jnsb"
+    para.style.backgroundColor = "green"
+    para.style.padding = "20px"
+    para.className = "paragraph"
+    para.id = "paraId"
+    document.body.appendChild(para)  // attach with body
+
+    const selectpara = document.querySelector('.paragraph')  // select by class or className
+    console.log(selectpara)
+
+    const selectbyId = document.getElementById('paraId')  // select by id 
+    console.log(selectbyId)
+
+
+    // -------------------------------------------
+
+    // 1st Method - create dom of ul list  using function  =
+
+    function addLang(langName) {
+        const ListItem = document.createElement('Li')
+        console.log(ListItem)
+        ListItem.innerHTML = `${langName}`
+
+        document.querySelector('.lang')
+        document.body.appendChild(ListItem)
+
+
+
+    }
+
+    addLang("Javascript")
+    addLang("PHP")
+
+    // Optimise Method using TEXTNODE function for Li
+
+    function OptimiseLI(langName) {
+        const ListItem = document.createElement('li')
+        ListItem.appendChild(document.createTextNode(langName))
+        document.querySelector('.lang')
+        document.body.appendChild(ListItem)
+
+    }
+
+    OptimiseLI("python")
+    OptimiseLI("GoLang")
+
+
+    // -------------------------------------------
+
+
+    //--1 Edit using inner html -- change in 2nd item of LI
+    const selectedLang = document.querySelector("li:nth-child(2)")
+    selectedLang.innerHTML = "Hi"
+
+    //--2 nd method Edit replace wth first creating new element and then selected one replace with new element created
+
+    //-- change in 1st item of LI
+
+    const firstLi = document.querySelector("li:nth-child(1)")
+    const newFirstLI = document.createElement('li')
+    newFirstLI.textContent = "Typescript"
+    firstLi.replaceWith(newFirstLI)
+
+
+    // 3rd approach EDIT on 3rd item
+
+    const ThirdLi = document.querySelector("li:nth-child(3)")
+    ThirdLi.outerHTML = '<li>Django</li>'
+
+
+    //-----------------------------------------------------------
+
+
+    //remove  -- delete the last item of list
+    const lanstLang = document.querySelector('li:last-child')
+    lanstLang.remove()
+
+
+
+</script>
+
+</html>
